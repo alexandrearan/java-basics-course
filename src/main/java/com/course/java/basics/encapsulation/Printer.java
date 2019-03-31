@@ -13,11 +13,17 @@ public class Printer {
         this.duplex = duplex;
     }
 
-    public void fillToner (double tonerLevel) {
+    public double fillToner (double tonerLevel) {
 
         if (tonerLevel >= 0 && tonerLevel <= 100) {
-            this.tonerLevel = tonerLevel;
+            if (tonerLevel + this.tonerLevel <= 100) {
+                this.tonerLevel = tonerLevel;
+            } else {
+                return -1;
+            }
         }
+        else
+            return -1;
     }
 
     public void printDuplex () {
