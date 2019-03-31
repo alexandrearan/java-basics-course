@@ -22,8 +22,10 @@ public class Printer {
                 return -1;
             }
         }
-        else
+        else {
             return -1;
+        }
+        return -1;
     }
 
     public void printDuplex () {
