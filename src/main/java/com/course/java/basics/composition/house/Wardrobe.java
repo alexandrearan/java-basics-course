@@ -1,4 +1,4 @@
-package com.course.java.basics.inheritance.house;
+package com.course.java.basics.composition.house;
 
 public class Wardrobe extends Furniture {
 

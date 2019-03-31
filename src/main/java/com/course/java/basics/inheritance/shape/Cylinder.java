@@ -1,4 +1,4 @@
-package com.course.java.basics.inheritance;
+package com.course.java.basics.inheritance.shape;
 
 //import lombok.Getter;
 //import lombok.NonNull;
