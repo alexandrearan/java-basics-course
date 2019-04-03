@@ -1,4 +1,4 @@
-package com.course.java.basics.oop.burger;
+package com.course.java.basics.oop.burgerchallenge;
 
 public class Burger {
 
@@ -6,10 +6,10 @@ public class Burger {
     private String rollType;
     private String meat;
 
-    private Ingredient lettuce;
-    private Ingredient tomato;
-    private Ingredient cheese;
-    private Ingredient pickle;
+    private Addition lettuce;
+    private Addition tomato;
+    private Addition cheese;
+    private Addition pickle;
 
     private double basePrice;
     private double totalPrice;
@@ -39,44 +39,44 @@ public class Burger {
     }
 
 
-    public void addIngredient (Ingredient ingredient) {
+    public void addAddition (Addition addition) {
 
-        switch(ingredient.getClass().getSimpleName())
+        switch(addition.getClass().getSimpleName())
         {
             case "Lettuce" :
-                this.lettuce = ingredient;
+                this.lettuce = addition;
                 break;
             case "Cheese" :
-                this.cheese = ingredient;
+                this.cheese = addition;
                 break;
             case "Tomato" :
-                this.tomato = ingredient;
+                this.tomato = addition;
                 break;
             case "Pickle" :
-                this.pickle = ingredient;
+                this.pickle = addition;
                 break;
             default:
                 System.out.println("Invalid Ingredient");
                 break;
 
         }
-        this.addPrice(ingredient.getPrice());
+        this.addPrice(addition.getPrice());
 
     }
-    public String getIngredientList() {
+    public String getAdditionList() {
 
 
-        String ingredientList = "";
+        String additionList = "";
 
         if(this.lettuce != null)
-            ingredientList += "\nlettuce: " + this.lettuce.getPrice();
+            additionList += " + lettuce: " + this.lettuce.getPrice();
         if (this.tomato != null)
-            ingredientList += "\ntomato: " + this.tomato.getPrice();
+            additionList += " + tomato: " + this.tomato.getPrice();
         if (this.cheese != null)
-            ingredientList += "\ncheese: " + this.cheese.getPrice();
+            additionList += " + cheese: " + this.cheese.getPrice();
         if (this.pickle != null)
-            ingredientList += "\npickle: " + this.pickle.getPrice();
+            additionList += " + pickle: " + this.pickle.getPrice();
 
-        return ingredientList;
+        return additionList;
     }
 }

@@ -1,11 +1,11 @@
-package com.course.java.basics.oop.burger;
+package com.course.java.basics.oop.burgerchallenge;
 
-public class Ingredient {
+public class Addition {
 
     private String name;
     private double price;
 
-    public Ingredient(String name, double price) {
+    public Addition(String name, double price) {
         this.name = name;
         this.price = price;
     }
