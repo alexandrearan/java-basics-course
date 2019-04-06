@@ -8,18 +8,8 @@ public class ContactList {
     private ArrayList<Contact> contacts = new ArrayList<Contact>();
     private static Scanner scanner = new Scanner(System.in);
 
-    public void addContact () {
 
-        System.out.println("Enter Contact Name: ");
-        String name = scanner.nextLine();
-
-        System.out.println("Enter Contact Phone Number: ");
-        String number = scanner.nextLine();
-
-        addContact(name, number);
-
-    }
-    private Contact addContact (String name, String number) {
+    public Contact addContact (String name, String number) {
 
         if(!contacts.contains(name) || !contacts.contains(number)) {
             Contact contact = new Contact(name, number);
@@ -31,32 +21,7 @@ public class ContactList {
 
     }
 
-    public void editContact () {
-
-        System.out.println("Enter name to edit contact: ");
-        String name = scanner.nextLine();
-
-        Contact contact = this.searchContact(name);
-
-        if(contact != null) {
-
-            System.out.println(contact.getName() + " : " + contact.getNumber());
-
-            System.out.println("Enter new name: ");
-            String newName = scanner.nextLine();
-
-            System.out.println("Enter new number: ");
-            String newNumber = scanner.nextLine();
-
-            editContact(name, newName, newNumber);
-
-        }
-        else {
-            System.out.println("Contact not found");
-        }
-    }
-
-    private boolean editContact (String name, String newName, String newNumber) {
+    public boolean editContact (String name, String newName, String newNumber) {
 
         Contact contact = this.searchContact(name);
 
@@ -69,24 +34,7 @@ public class ContactList {
         return false;
     }
 
-    public void removeContact () {
-
-        System.out.println("Enter name to edit contact: ");
-        String name = scanner.nextLine();
-
-        Contact contact = this.searchContact(name);
-
-        if(contact != null) {
-            System.out.println("deleting " + contact.getName() + "...");
-            removeContact(name);
-        }
-        else {
-            System.out.println(name + " not found in contact list");
-        }
-
-    }
-
-    private Contact removeContact (String name) {
+    public Contact removeContact (String name) {
 
         Contact contact = this.searchContact(name);
 
@@ -98,26 +46,12 @@ public class ContactList {
         return null;
     }
 
-    public void searchContact() {
-        System.out.println("Search contact: ");
-        String name = scanner.nextLine();
-
-        Contact contact = searchContact(name);
-
-        if(contact != null) {
-            System.out.println(contact.getName() + ": "  + contact.getNumber());
-        }
-        else {
-            System.out.println(name + " not found!");
-        }
-    }
-
-    private Contact searchContact (String name) {
+    public Contact searchContact (String name) {
 
         for (Contact contact : contacts) {
             if(contact.getName().equals(name))
                 return contact;
-        }xx
+        }
         return null;
     }
 

@@ -14,6 +14,7 @@ public class MobilePhone {
         while (!quit) {
 
             int option = printMenu();
+            scanner.nextLine();
 
             switch(option) {
                 default:
@@ -23,16 +24,16 @@ public class MobilePhone {
                     contactList.showContactList();
                     break;
                 case 3:
-                    contactList.addContact();
+                    addContact();
                     break;
                 case 4:
-                    contactList.editContact();
+                    editContact();
                     break;
                 case 5:
-                    contactList.removeContact();
+                    removeContact();
                     break;
                 case 6:
-                    contactList.searchContact();
+                    searchContact();
                     break;
                 case 7:
                     quit = true;
@@ -54,5 +55,72 @@ public class MobilePhone {
         System.out.println("*****************************");
         System.out.println("Select an option: ");
         return scanner.nextInt();
+    }
+
+    public static void addContact () {
+
+        System.out.println("Enter Contact Name: ");
+        String name = scanner.nextLine();
+
+        System.out.println("Enter Contact Phone Number: ");
+        String number = scanner.nextLine();
+
+        contactList.addContact(name, number);
+
+    }
+
+    public static void editContact () {
+
+        System.out.println("Enter name to edit contact: ");
+        String name = scanner.nextLine();
+
+        Contact contact = contactList.searchContact(name);
+
+        if(contact != null) {
+
+            System.out.println(contact.getName() + " : " + contact.getNumber());
+
+            System.out.println("Enter new name: ");
+            String newName = scanner.nextLine();
+
+            System.out.println("Enter new number: ");
+            String newNumber = scanner.nextLine();
+
+            contactList.editContact(name, newName, newNumber);
+
+        }
+        else {
+            System.out.println("Contact not found");
+        }
+    }
+
+    public static void removeContact () {
+
+        System.out.println("Enter name to edit contact: ");
+        String name = scanner.nextLine();
+
+        Contact contact = contactList.searchContact(name);
+
+        if(contact != null) {
+            System.out.println("deleting " + contact.getName() + "...");
+            contactList.removeContact(name);
+        }
+        else {
+            System.out.println(name + " not found in contact list");
+        }
+    }
+    public static void searchContact() {
+
+        System.out.println("Search contact: ");
+        String name = scanner.nextLine();
+
+        Contact contact = contactList.searchContact(name);
+
+        if(contact != null) {
+            System.out.println(contact.getName() + ": "  + contact.getNumber());
+        }
+        else {
+            System.out.println(name + " not found!");
+        }
     }
 }
