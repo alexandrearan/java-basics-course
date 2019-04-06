@@ -40,7 +40,7 @@ public class Main {
     public static int printMainMenu () {
         System.out.println("*****************************");
         System.out.println("\t(1) Show Branches List");
-        System.out.println("\t(2) Create Branch CONFLICT");
+        System.out.println("\t(2) Create Branch CONFLICT 02");
         System.out.println("\t(3) Select Branch");
         System.out.println("*****************************");
         System.out.println("Select an option: ");
