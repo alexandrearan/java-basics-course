@@ -27,9 +27,16 @@ public class ContactList {
 
         if (contact != null) {
 
-            contact.setName(newName);
-            contact.setNumber(newNumber);
-            return true;
+            if(searchContact(newName) != null){
+
+                System.out.println("Contact name " + newName + " Already exists. Contact not updated.");
+            }
+            else {
+
+                contact.setName(newName);
+                contact.setNumber(newNumber);
+                return true;
+            }
         }
         return false;
     }
