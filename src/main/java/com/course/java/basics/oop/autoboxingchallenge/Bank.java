@@ -13,10 +13,26 @@ public class Bank {
         this.branches = new ArrayList<Branch>();
     }
 
-    public void addBranch (String name) {
-
-        branches.add(new Branch(name));
+    public String getName() {
+        return name;
     }
+
+    public ArrayList<Branch> getBranches() {
+        return branches;
+    }
+
+    public boolean addBranch (String name) {
+
+        for(Branch branch : branches) {
+            if(branch.getName().equals(name)) {
+                return false;
+            }
+        }
+        branches.add(new Branch(name));
+        return true;
+    }
+
+
     public Branch getBranch(String name) {
 
         for (Branch branch : branches) {
