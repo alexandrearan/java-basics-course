@@ -13,7 +13,7 @@ public class Bank {
         this.branches = new ArrayList<Branch>();
     }
 
-    public String getName() {
+    public String getBankName() {
         return name;
     }
 
@@ -21,23 +21,22 @@ public class Bank {
         return branches;
     }
 
-    public boolean addBranch (String name) {
+    public boolean addBranch (String branchName) {
 
         for(Branch branch : branches) {
-            if(branch.getName().equals(name)) {
+            if(branch.getName().equals(branchName)) {
                 return false;
             }
         }
-        branches.add(new Branch(name));
+        branches.add(new Branch(branchName));
         return true;
     }
 
-
-    public Branch getBranch(String name) {
+    public Branch getBranch(String branchName) {
 
         for (Branch branch : branches) {
 
-            if(branch.getName().equals(name)) {
+            if(branch.getName().equals(branchName)) {
 
                 return branch;
             }

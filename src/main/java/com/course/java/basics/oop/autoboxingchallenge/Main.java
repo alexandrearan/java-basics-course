@@ -36,6 +36,7 @@ public class Main {
             }
         }
     }
+
     public static int printMainMenu () {
 
         System.out.println("*****************************");
@@ -65,6 +66,7 @@ public class Main {
     private static void showBranchList () {
 
         for(Branch branch : bank.getBranches()) {
+
             System.out.println(branch.getName());
         }
     }
@@ -86,7 +88,6 @@ public class Main {
     private static void selectBranch () {
 
         System.out.println("Enter Branch Name: ");
-
         selectedBranch = branchExists(scanner.nextLine());
 
         if (selectedBranch != null) {
@@ -120,10 +121,7 @@ public class Main {
                 }
             }
         }
-
-
         System.out.println("Branch not found");
-
     }
 
     private static void showCustomersList() {
@@ -133,7 +131,6 @@ public class Main {
 
             System.out.println(customer.getName());
         }
-
     }
 
     private static void addCustomer() {
@@ -142,11 +139,10 @@ public class Main {
         String name = scanner.nextLine();
 
         System.out.println("Enter an initial transaction, or 0 for no transaction");
-        double value = scanner.nextDouble();
+        Double value = scanner.nextDouble();
 
         scanner.nextLine();
         selectedBranch.addCustomer(name, value);
-
     }
 
     private static void addTransaction() {
@@ -155,7 +151,7 @@ public class Main {
         String name = scanner.nextLine();
 
         System.out.println("Enter transaction value: ");
-        double value = scanner.nextDouble();
+        Double value = scanner.nextDouble();
         scanner.nextLine();
 
         if(selectedBranch.getCustomer(name) != null) {
@@ -176,6 +172,7 @@ public class Main {
             }
         }
     }
+
     private static void showTransactions () {
 
         System.out.println("Enter Customer Name: ");
@@ -198,8 +195,8 @@ public class Main {
 
             System.out.println("Customer " + name + " does not exist in " + selectedBranch.getName());
         }
-
     }
+
     private static Branch branchExists (String name) {
 
         for (Branch branch : bank.getBranches()) {
