@@ -1,4 +1,4 @@
-package com.course.java.basics.oop;
+package com.course.java.basics.oop.oopbasics;
 
 public class Point {
 
