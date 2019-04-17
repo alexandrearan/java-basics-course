@@ -19,16 +19,23 @@ public class BST {
     private Node addNode (Node root, int value) {
 
         if (root == null) {
+
             this.root = new Node(value);
             return this.root;
         }
 
         if (value < root.getValue()) {
+
             root.setLeftChild(addNode(root.getLeftChild(), value));
+
         } else if (value > root.getValue()) {
+
             root.setRightChild(addNode(root.getRightChild(), value));
+
         } else {
+
             System.out.println("Duplicates are not allowed.");
+
         }
         return root;
 
