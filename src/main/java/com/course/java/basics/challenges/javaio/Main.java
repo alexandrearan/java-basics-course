@@ -1,4 +1,4 @@
-package com.course.java.basics.challenges.adventuregame;
+package com.course.java.basics.challenges.javaio;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static Map<Integer, Location> locations = new HashMap<>();
+    private static final Locations locations = new Locations();
     private static final Map<String, String> ALLOWED_DIRECTIONS = new HashMap<>();
 
     public static void main (String[] args) {
@@ -23,35 +23,7 @@ public class Main {
 
         Scanner scanner = new Scanner (System.in);
 
-        Map<String, Integer> tempMap = new HashMap<>();
-        tempMap.put("W", 2);
-        tempMap.put("E", 3);
-        tempMap.put("S", 4);
-        tempMap.put("N", 5);
-        locations.put(1, new Location(1, "you are sitting at the end of a road before a small brick building", tempMap));
-
-        tempMap = new HashMap<>();
-        tempMap.put("N", 5);
-        locations.put(2, new Location(2, "you are at the top of a hill", tempMap));
-
-        tempMap = new HashMap<>();
-        tempMap.put("W", 1);
-        locations.put(3, new Location(3, "you are inside a building, a well house for a small spring", tempMap));
-
-        tempMap = new HashMap<>();
-        tempMap.put("N", 1);
-        tempMap.put("W", 2);
-        locations.put(4, new Location(4, "you are in a valley beside a stream", tempMap));
-
-        tempMap = new HashMap<>();
-        tempMap.put("S", 1);
-        tempMap.put("W", 2);
-        locations.put(5, new Location(5, "you are in the forest", tempMap));
-
-        tempMap = new HashMap<>();
-        locations.put(0, new Location(0, "you are sitting in front of the computer learning java", tempMap));
-
-        int loc = 1;
+        int loc = 77;
 
         while (true) {
 
@@ -85,6 +57,7 @@ public class Main {
             if (exits.containsKey(direction)) {
 
                 loc = exits.get(direction);
+                System.out.println("location: " + loc);
 
             } else {
 

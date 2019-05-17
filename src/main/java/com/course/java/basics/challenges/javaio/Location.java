@@ -1,8 +1,8 @@
-package com.course.java.basics.challenges.adventuregame;
+package com.course.java.basics.challenges.javaio;
 
 import lombok.Getter;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Location {
@@ -20,9 +20,9 @@ public class Location {
         this.locationID = locationID;
         this.description = description;
         if(exits != null) {
-            this.exits = exits;
+            this.exits = new LinkedHashMap<String, Integer>(exits);
         } else {
-            this.exits = new HashMap<String, Integer>();
+            this.exits = new LinkedHashMap<String, Integer>();
         }
 
         this.exits.put("Q", 0);
@@ -33,6 +33,6 @@ public class Location {
     }
 
     public Map<String, Integer> getExits () {
-        return new HashMap<String, Integer>(exits);
+        return new LinkedHashMap<String, Integer>(exits);
     }
 }

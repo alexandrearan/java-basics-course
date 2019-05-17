@@ -1,7 +1,5 @@
 package com.course.java.basics.challenges._package;
 
-import alexandre.utils.Series;
-
 public class Main {
 
     public static void main (String[] args) {
@@ -12,9 +10,15 @@ public class Main {
 
         for (int i = 0; i <= 10; i++) {
             System.out.println(Series.factorial(i));
+        }for (int i = 0; i <= 10; i++) {
+            System.out.println(Series.nSum(i));
         }
 
-        for (int i = 0; i <= 50; i++) {
+        for (int i = 0; i <= 10; i++) {
+            System.out.println(Series.factorial(i));
+        }
+
+        for (int i = 0; i <= 11; i++) {
             System.out.println(Series.fibonacci(i));
         }
 
